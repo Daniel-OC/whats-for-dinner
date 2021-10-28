@@ -107,5 +107,10 @@ input {
 
 .you-should-make {
   text-align: center;
-  transform: translateY(40px);
+  font-size: 16px;
+  transform: translateY(0px);
+}
+
+.insert-recipe {
+  text-align: center;
 }
