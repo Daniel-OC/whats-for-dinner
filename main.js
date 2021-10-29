@@ -28,3 +28,8 @@ function toggleHidden() {
   insertRecipe.classList.remove("hidden");
   }
 }
+
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length)
+}
