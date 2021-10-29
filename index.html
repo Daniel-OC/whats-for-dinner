@@ -13,23 +13,24 @@
     <main>
       <div class="box left-box">
         <h2 class="what-you-wanna-cook">What are you looking for?</h2>
-        <form id="choose-course">
-          <input type ="radio" id="side-button">
+        <div id="choose-course">
+          <input type ="radio" name="one" id="side-button">
           <label for="side">Side</label><br>
-          <input type="radio" id="entree-button">
+          <input type="radio" name="one" id="entree-button">
           <label for="entree">Entree</label><br>
-          <input type="radio" id="dessert-button">
+          <input type="radio" name="one" id="dessert-button">
           <label for="dessert">Dessert</label><br>
-        </form>
-        <button type="submit" class = "lets-cook-button" form="choose-course">Let's Cook!</button>
+        </div>
+        <button type="submit" class ="lets-cook-button" >Let's Cook!</button>
       </div>
       <section class="box right-box">
         <h6 class="you-should-make hidden"><i>You Should Make...</i></h6>
         <img class="cook-pot-image" src="./assets/cookpot.svg" alt="Picture of a pot for cooking"/img>
         <h3 class="insert-recipe hidden">This is dummy text for a recipe to be put into</h3>
+        <button class="clear-button">Clear</button>
       </section>
     </main>
   </body>
   <script type="text/javascript" src="main.js"></script>
-  <script src ="./data.js"</script>
+  <script type="text/javascript" src ="./data.js"></script>
 </html>
