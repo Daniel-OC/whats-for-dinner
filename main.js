@@ -18,7 +18,8 @@ var insertRecipe = document.querySelector('.insert-recipe')
 var introFavs = document.querySelector('.here-are-favs')
 var listOfFavs = document.querySelector('.list-favs')
 
-
+/////////////
+var allFavButtons = listOfFavs.getElementsByTagName("input")
 
 
 var recipe; //serves as data model on home view
@@ -87,19 +88,30 @@ function generateFavView() {
   listOfFavs.innerHTML= '';
   for(i = 0; i < favs.length; i++) {
     listOfFavs.innerHTML += `
-    <input type ="radio" id="${i}">
+    <input type ="radio" name="same-as-others" id="${i}">
     <label for="side">${favs[i]}</label><br>`
   }
 }
 
 function deleteFav() {
-  for (i=0; i < favs.length; i++) {
-    if (event.target.id === `${i}`) {
-      favs.splice(i, 1)
+  for (i=0; i < allFavButtons.length; i++) {
+    console.log(allFavButtons[i].checked);
+    if (allFavButtons[i].checked) {
+      favs.splice(i,1)
     }
   }
   generateFavView();
 }
+
+// function deleteFav() {
+//   for (i=0; i < favs.length; i++) {
+//     console.log(event.target.id)
+//     if (event.target.id === `${i}`) {
+//       favs.splice(i, 1)
+//     }
+//   }
+//   generateFavView();
+// }
 
 
 
