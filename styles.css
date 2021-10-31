@@ -142,7 +142,8 @@ input {
   height: 5%;
   width: 14%;
   background-color: #0fb9b1;
-  color: white;
+  color: Black;
+  text-transform: uppercase;
 
 
 }
@@ -153,8 +154,9 @@ input {
   height: 5%;
   width: 14%;
   background-color: #0fb9b1;
-  color: white;
-  margin-top: 10px
+  color: Black;
+  margin-top: 10px;
+  text-transform: uppercase;
 }
 
 .fav-recipes-box {
