@@ -5,16 +5,29 @@ var dessertButton = document.querySelector('#dessert-button')
 var letsCookButton = document.querySelector(".lets-cook-button")
 var viewFavsButton = document.querySelector(".view-favorites-button")
 var favButton = document.querySelector(".fav-button")
+
+//views
+var homeView = document.querySelector('.home-view')
+var favView = document.querySelector('.fav-view')
+
 //other
 var cookingSuggestion = document.querySelector(".you-should-make")
 var potImage = document.querySelector('.cook-pot-image')
 var insertRecipe = document.querySelector('.insert-recipe')
-var recipe;
+var introFavs = document.querySelector('.here-are-favs')
+var listOfFavs = document.querySelector('.list-favs')
 
 
 
+
+var recipe; //serves as data model on home view
+
+
+//event listeners
 letsCookButton.addEventListener('click', chooseCourse)
 favButton.addEventListener('click', addFav)
+viewFavsButton.addEventListener('click', toggleFavView)
+favView.addEventListener('dblclick', deleteFav)
 
 function addHidden(element) {
   element.classList.add('hidden')
@@ -39,15 +52,17 @@ function showPot() {
 }
 
 function chooseCourse() {
-  if (entreeButton.checked) {
-    recipe = entrees[getRandomIndex(entrees)]
-  }else if (sideButton.checked) {
-    recipe = sides[getRandomIndex(sides)]
-  }else if (dessertButton.checked) {
-    recipe = desserts[getRandomIndex(desserts)]
+  if (entreeButton.checked || sideButton.checked || dessertButton.checked) {
+    if (entreeButton.checked) {
+      recipe = entrees[getRandomIndex(entrees)]
+    }else if (sideButton.checked) {
+      recipe = sides[getRandomIndex(sides)]
+    }else if (dessertButton.checked) {
+      recipe = desserts[getRandomIndex(desserts)]
+    }
+    insertRecipe.innerHTML = `<h3 class="insert-recipe">${recipe}</h3>`;
+    hidePot();
   }
-  insertRecipe.innerHTML = `<h3 class="insert-recipe">${recipe}</h3>`;
-  hidePot();
 }
 
 function addFav() {
@@ -55,6 +70,32 @@ function addFav() {
   favs.push(recipe)
   console.log(favs)
 }
+
+function toggleFavView() {
+  addHidden(homeView);
+  removeHidden(favView);
+  generateFavView();
+}
+
+function generateFavView() {
+  listOfFavs.innerHTML= '';
+  for(i = 0; i < favs.length; i++) {
+    listOfFavs.innerHTML += `
+    <input type ="radio" id="side-button">
+    <label for="side">${favs[i]}</label><br>`
+  }
+}
+
+function deleteFav() {
+  for (i=0; i < favs.length; i++) {
+    if (event.target.id === `${i}`) {
+      favs.splice(i, 1)
+    }
+  }
+  generateFavView();
+}
+
+
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length)
