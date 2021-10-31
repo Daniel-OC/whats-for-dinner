@@ -47,3 +47,5 @@ var desserts = [
   "Croissants",
   "Eclairs"
 ]
+
+var favs = []

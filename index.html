@@ -7,27 +7,37 @@
   <body>
     <header>
       <h1 class="title">What's for Dinner?</h1>
-      <button class="add-recipe-button">Add a Recipe</button>
+      <button class="view-favorites-button ">View Favorites</button>
     </header>
 
     <main>
-      <div class="box left-box">
-        <h2 class="what-you-wanna-cook">What are you looking for?</h2>
-        <div id="choose-course">
-          <input type ="radio" name="one" id="side-button">
-          <label for="side">Side</label><br>
-          <input type="radio" name="one" id="entree-button">
-          <label for="entree">Entree</label><br>
-          <input type="radio" name="one" id="dessert-button">
-          <label for="dessert">Dessert</label><br>
-        </div>
-        <button type="submit" class ="lets-cook-button" >Let's Cook!</button>
-      </div>
-      <section class="box right-box">
-        <h6 class="you-should-make hidden"><i>You Should Make...</i></h6>
-        <img class="cook-pot-image" src="./assets/cookpot.svg" alt="Picture of a pot for cooking"/img>
-        <h3 class="insert-recipe hidden">This is dummy text for a recipe to be put into</h3>
-        <button class="clear-button">Clear</button>
+      <section class="home-view">
+        <section class="box left-box">
+          <h2 class="what-you-wanna-cook">What are you looking for?</h2>
+          <div id="choose-course">
+            <input type ="radio" name="one" id="side-button">
+            <label for="side">Side</label><br>
+            <input type="radio" name="one" id="entree-button">
+            <label for="entree">Entree</label><br>
+            <input type="radio" name="one" id="dessert-button">
+            <label for="dessert">Dessert</label><br>
+          </div>
+          <button type="submit" class ="lets-cook-button" >Let's Cook!</button>
+        </section>
+        <section class="box right-box">
+          <h6 class="you-should-make hidden"><i>You Should Make...</i></h6>
+          <img class="cook-pot-image" src="./assets/cookpot.svg" alt="Picture of a pot for cooking"/img>
+          <h3 class="insert-recipe hidden">This is dummy text for a recipe to be put into</h3>
+          <button class="fav-button hidden">🤍</button>
+        </section>
+      </section>
+      <section class="fav-view hidden">
+        <section class="fav-recipes-box">
+          <button class="home-from-favs">Home</button>
+          <h2 class="here-are-favs">Here are your favorite recipes:</h2>
+          <h3 class="list-favs"></h3>
+          <button class="delete-fav">Remove From Favorites</button>
+        </section>
       </section>
     </main>
   </body>
