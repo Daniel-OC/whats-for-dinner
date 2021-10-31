@@ -7,6 +7,7 @@ var viewFavsButton = document.querySelector(".view-favorites-button")
 var favButton = document.querySelector(".fav-button")
 var homeButton = document.querySelector('.home-from-favs')
 var deleteButton = document.querySelector('.delete-fav')
+
 //views
 var homeView = document.querySelector('.home-view')
 var favView = document.querySelector('.fav-view')
@@ -17,12 +18,10 @@ var potImage = document.querySelector('.cook-pot-image')
 var insertRecipe = document.querySelector('.insert-recipe')
 var introFavs = document.querySelector('.here-are-favs')
 var listOfFavs = document.querySelector('.list-favs')
-
-/////////////
 var allFavButtons = listOfFavs.getElementsByTagName("input")
 
-
-var recipe; //serves as data model on home view
+//data model
+var recipe;
 
 
 //event listeners
@@ -45,13 +44,6 @@ function hidePot() {
   removeHidden(cookingSuggestion);
   removeHidden(insertRecipe);
   removeHidden(favButton);
-}
-
-function showPot() {
-  removeHidden(potImage);
-  addHidden(cookingSuggestion);
-  addHidden(insertRecipe);
-  addHidden(favButton)
 }
 
 function chooseCourse() {
@@ -95,25 +87,12 @@ function generateFavView() {
 
 function deleteFav() {
   for (i=0; i < allFavButtons.length; i++) {
-    console.log(allFavButtons[i].checked);
     if (allFavButtons[i].checked) {
       favs.splice(i,1)
     }
   }
   generateFavView();
 }
-
-// function deleteFav() {
-//   for (i=0; i < favs.length; i++) {
-//     console.log(event.target.id)
-//     if (event.target.id === `${i}`) {
-//       favs.splice(i, 1)
-//     }
-//   }
-//   generateFavView();
-// }
-
-
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length)
