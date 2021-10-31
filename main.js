@@ -5,7 +5,8 @@ var dessertButton = document.querySelector('#dessert-button')
 var letsCookButton = document.querySelector(".lets-cook-button")
 var viewFavsButton = document.querySelector(".view-favorites-button")
 var favButton = document.querySelector(".fav-button")
-
+var homeButton = document.querySelector('.home-from-favs')
+var deleteButton = document.querySelector('.delete-fav')
 //views
 var homeView = document.querySelector('.home-view')
 var favView = document.querySelector('.fav-view')
@@ -27,7 +28,8 @@ var recipe; //serves as data model on home view
 letsCookButton.addEventListener('click', chooseCourse)
 favButton.addEventListener('click', addFav)
 viewFavsButton.addEventListener('click', toggleFavView)
-favView.addEventListener('dblclick', deleteFav)
+deleteButton.addEventListener('click', deleteFav)
+homeButton.addEventListener('click', toggleHomeView)
 
 function addHidden(element) {
   element.classList.add('hidden')
@@ -68,13 +70,17 @@ function chooseCourse() {
 function addFav() {
   if (!favs.includes(recipe))
   favs.push(recipe)
-  console.log(favs)
 }
 
 function toggleFavView() {
   addHidden(homeView);
   removeHidden(favView);
   generateFavView();
+}
+
+function toggleHomeView() {
+  addHidden(favView)
+  removeHidden(homeView)
 }
 
 function generateFavView() {
