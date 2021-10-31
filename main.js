@@ -81,7 +81,7 @@ function generateFavView() {
   listOfFavs.innerHTML= '';
   for(i = 0; i < favs.length; i++) {
     listOfFavs.innerHTML += `
-    <input type ="radio" id="side-button">
+    <input type ="radio" id="${i}">
     <label for="side">${favs[i]}</label><br>`
   }
 }

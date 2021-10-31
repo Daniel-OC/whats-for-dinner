@@ -133,9 +133,30 @@ input {
 .fav-view{
   display: flex;
   justify-content: center;
+}
+
+.home-from-favs {
+  margin-top: 20px;
+  border: none;
+  border-radius: 3px;
+  height: 5%;
+  width: 14%;
+  background-color: #0fb9b1;
+  color: white;
 
 
 }
+
+.delete-fav{
+  border: none;
+  border-radius: 3px;
+  height: 5%;
+  width: 14%;
+  background-color: #0fb9b1;
+  color: white;
+  margin-top: 10px
+}
+
 .fav-recipes-box {
   background-color: rgba(225, 225, 225, 0.9);
   display: flex;
